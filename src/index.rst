@@ -1,0 +1,39 @@
+My Retrogaming setup
+====================
+
+.. note::
+    This website is under construction.
+
+This website describes in detail my retrogaming setup.
+
+.. image:: _static/demo.gif
+   :alt: StreamPlayer
+   :align: center
+
+There is a lot of things going on here. Here's a high level overview of what is going on when I press the power button on my SNES:
+
+1. the button pressed is intercepted by a python program running on a raspberry pi
+2. the program sends a MQTT message to Home Assistant that the SNES button was pressed
+3. Home assistant starts multiple automations
+    1. it activates a smart plug to power on the scart switch and the upscaler;
+    2. a CEC signal is sent to the TV to power on and then switches to the correct input;
+    3. an infrared signal simulating a button press on its remote controller is transmitted to the upscaler in order to change to the appropriate profile for the SNES;
+    4. Power on another smart plug for the external audio card and the audio mixer;
+    5. Lights are dimmed to the correct level through Zigbee.
+4. The scart switch detects the signal and switches to the correct input. (I have no merit here, it just works)
+5. Now I can play my game.
+
+
+Contents, indices and tables
+============================
+
+.. toctree::
+  :maxdepth: 2
+
+  infrared
+  power
+  products
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

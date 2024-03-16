@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  docs:
+    build:
+      context: .
+      dockerfile: ./compose/Dockerfile
+      args:
+        PYTHON_VERSION: 3.12
+    image: retrogaming
+    volumes:
+      - .:/app:cached
+    command: /start
+    environment:
+      - SPHINX_COMMAND=html
+    ports:
+      - "5000:5000"
+  docs-test:
+    image: retrogaming
+    volumes:
+      - .:/app:cached
+    command: /start
+    environment:
+      - SPHINX_COMMAND=doctest -E

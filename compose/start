@@ -1,0 +1,30 @@
+#!/bin/sh
+
+set -o errexit
+set -o pipefail
+set -o nounset
+
+# Basically we watch only README.rst, LICENCE.rst and everything under django_structlog
+sphinx-autobuild src /src/_build/html \
+-b ${SPHINX_COMMAND} \
+--port 5000 \
+--host 0.0.0.0 \
+--watch . \
+--ignore "*___jb_*" \
+--ignore ".*/*" \
+--ignore ".*" \
+--ignore "build/*" \
+--ignore "compose/*" \
+--ignore "config/*" \
+--ignore "dist/*" \
+--ignore "django_structlog.egg-info/*" \
+--ignore "django_structlog_demo_project/*" \
+--ignore "logs/*" \
+--ignore "requirements/*" \
+--ignore "requirements.txt" \
+--ignore "docker*.yml" \
+--ignore "manage.py" \
+--ignore "MANIFEST.in" \
+--ignore "*.toml" \
+--ignore "*.log" \
+--ignore "*.ini"
