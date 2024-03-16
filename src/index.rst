@@ -1,4 +1,4 @@
-My Retrogaming setup
+My Retrogaming Setup
 ====================
 
 .. note::
