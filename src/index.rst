@@ -24,6 +24,9 @@ There is a lot of things going on here. Here's a high level overview of what is 
 5. Now I can play my game.
 
 
+If you have any questions, feel free to open a `github issue <https://github.com/jrobichaud/retrogaming/issues/new>`_.
+
+
 Contents, indices and tables
 ============================
 
@@ -33,6 +36,7 @@ Contents, indices and tables
   infrared
   power
   products
+  homeassistant
 
 * :ref:`genindex`
 * :ref:`modindex`
