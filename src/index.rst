@@ -4,6 +4,12 @@
    :description: This website describes in detail my retrogaming setup.
    :keywords: retrogaming,homeassistant,arduino,automation,infrared,raspberry pi
    :author: Jules Robichaud-Gagnon
+   :og:title property=My Retrogaming Setup: My Retrogaming Setup
+   :og:type property=article: article
+   :og:image property=https://jrobichaud.github.io/retrogaming/_static/demo.gif: https://jrobichaud.github.io/retrogaming/_static/demo.gif
+   :og:url property=https://jrobichaud.github.io/retrogaming/: https://jrobichaud.github.io/retrogaming/
+   :twitter:card: summary_large_image
+   :og:description property=This website describes in detail my retrogaming setup.: This website describes in detail my retrogaming setup.
 
 My Retrogaming Setup
 ====================
