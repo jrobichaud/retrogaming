@@ -10,7 +10,7 @@ This website describes in detail my retrogaming setup.
    :alt: StreamPlayer
    :align: center
 
-There is a lot of things going on here. Here's a high level overview of what is going on when I press the power button on my SNES:
+There is a lot of things going on here. Here's an overview of what is going on when I press the SNES keypad button:
 
 1. the button pressed is intercepted by a python program running on a raspberry pi
 2. the program sends a MQTT message to Home Assistant that the SNES button was pressed
