@@ -1,12 +1,8 @@
 ARG PYTHON_VERSION
 
-FROM python:${PYTHON_VERSION}-alpine as python
+FROM python:${PYTHON_VERSION} as python
 
 FROM python AS python-build-stage
-
-RUN apk update \
-  && apk add --virtual build-dependencies \
-     build-base
 
 COPY ./src/requirements.txt /requirements.txt
 
@@ -18,6 +14,13 @@ FROM python AS python-run-stage
 ENV PYTHONUNBUFFERED 1
 
 WORKDIR /app
+
+RUN set -eux; \
+    apt-get update; \
+    apt-get install -y --no-install-recommends \
+    graphviz \
+    ; \
+    rm -rf /var/lib/apt/lists/*
 
 COPY --from=python-build-stage /usr/src/app/wheels  /wheels/
 
