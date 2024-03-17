@@ -17,7 +17,7 @@ My Retrogaming Setup
 .. note::
     This website is under construction.
 
-This website describes in detail my retrogaming setup.
+This website describes in detail my retrogaming setup. It's more of a personal documentation than a tutorial. I hope it can be useful to someone else.
 
 .. image:: _static/demo.gif
    :alt: StreamPlayer
