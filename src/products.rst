@@ -47,3 +47,8 @@ Retrotink 4K
 Upscaler for retro consoles. Upscales video up to 4K.
 
 `shop <https://www.retrotink.com/product-page/retrotink-4k>`_
+
+I bought accessories for it:
+
+- `SCART-Lock for RetroTINK-4K <https://kytor.com/store/product/rt4k-scart-lock/>`_
+- `RetroTINK 4K Vertical Stand <https://www.etsy.com/ca/listing/1616574816/retrotink-4k-vertical-stand>`_
