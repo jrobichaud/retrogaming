@@ -74,4 +74,4 @@ html_theme = "alabaster"
 html_static_path = ["_static"]
 graphviz_output_format = "svg"
 
-html_baseurl = "retrogaming.robichaudg.net"
+#html_baseurl = "retrogaming.robichaudg.net"
