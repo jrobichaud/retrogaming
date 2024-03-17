@@ -3,6 +3,8 @@
 Power
 =====
 
+.. _smart_plugs:
+
 Smart Plugs
 -----------
 

@@ -4,7 +4,7 @@
    :author: Jules Robichaud-Gagnon
    :og:title property=My Retrogaming Setup: My Retrogaming Setup
    :og:type property=article: article
-   :og:image property=https://jrobichaud.github.io/retrogaming/_static/demo.gif: https://jrobichaud.github.io/retrogaming/_static/demo.gif
+   :og:image property=https://jrobichaud.github.io/retrogaming/_static/oveview.jpg: https://jrobichaud.github.io/retrogaming/_static/oveview.jpg
    :og:url property=https://jrobichaud.github.io/retrogaming/: https://jrobichaud.github.io/retrogaming/
    :twitter:card: summary_large_image
    :og:description property=This website describes in detail my retrogaming setup.: This website describes in detail my retrogaming setup.
@@ -49,6 +49,7 @@ Contents, indices and tables
   cec
   power
   audio
+  cast
   products
   homeassistant
   alttpr
