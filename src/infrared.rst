@@ -122,6 +122,7 @@ Circuit
 
 I followed `adafruit's "sending ir codes" tutorial <https://learn.adafruit.com/using-an-infrared-library/sending-ir-codes>`_ to build the circuit.
 
+I used these :ref:`ir_leds`.
 
 infrared-nec (Arduino program)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

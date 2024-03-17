@@ -50,7 +50,7 @@ I noticed the Android TV Remote integration is more reliable to detect the lates
 
 
 Wall mounted monitor's automation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 I use Home Assistant to detect when the Chromecast is playing or buffering and then turn on the corresponding scene.
 
