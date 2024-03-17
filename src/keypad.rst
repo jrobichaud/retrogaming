@@ -13,7 +13,7 @@ Its a 3d printed keypad with 16 keys I bought from `Etsy <https://www.etsy.com/c
 Overview
 --------
 
-.. graphviz:: keypad_sequence.dot
+.. graphviz:: graphs/keypad_sequence.dot
 
 .. _keypad_to_mqtt:
 

@@ -13,7 +13,7 @@ I use Infrared signals to:
 
 This is how the whole process looks like:
 
-.. graphviz:: infrared_sequence.dot
+.. graphviz:: graphs/infrared_sequence.dot
 
 
 This is how the whole setup looks like:

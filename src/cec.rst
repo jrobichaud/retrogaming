@@ -10,7 +10,7 @@ Overview
 
 I use CEC protocol control my TV from Home Assistant. Ex: Turn on/off TV, change input source, and control volume.
 
-.. graphviz:: cec_sequence.dot
+.. graphviz:: graphs/cec_sequence.dot
 
 Proxy configuration
 -------------------
@@ -78,7 +78,7 @@ Automations
 I used `CEC-O-Matic <https://cec-o-matic.com/>`_ to determine the messages for my TV.
 
 .. csv-table:: CEC messages for my TV
-   :file: cec_messages.csv
+   :file: tables/cec_messages.csv
    :header-rows: 1
 
 This is an example home assistant automation to switch to hdmi 1:
