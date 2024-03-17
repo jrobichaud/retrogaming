@@ -1,0 +1,35 @@
+// https://stackoverflow.com/a/59363959/2115513
+digraph SEQ_DIAGRAM {
+    graph [overlap = true, splines = line, nodesep = 1.0, ordering = out];
+    edge [arrowhead = none];
+    node [shape = none, width = 0, height = 0, label = ""];
+
+    {
+        rank = same;
+        node [shape = rectangle, height = 0.7, width = 2];
+        homeassistant [label = "Home Assistant"];
+        cec [label = "cec proxy (raspberry pi)"];
+        tv [label = "TV"];
+    }
+    // Draw vertical lines
+    {
+        edge [style = dashed, weight = 6];
+        homeassistant -> a1 -> a2 -> a3;
+        a3 -> a5;
+    }
+    {
+        edge [style = dashed, weight = 6];
+        cec -> b1
+        b1 -> b2 [penwidth = 5, style = solid];
+        b2 -> b3 -> b4 -> b5;
+    }
+    {
+        edge [style = dashed, weight = 6];
+        tv -> c1;
+        c1 -> c2;
+        c2 -> c3 [penwidth = 5, style = solid];
+        c3 -> c4 -> c5;
+    }
+    { rank = same; a1 -> b1 [label = "send message via WIFI to proxy\nEx: 1f:82:10:00", arrowhead = normal]; }
+    { rank = same; b2 -> c2 [label ="relays message to TV through HDMI cable\nEx: 1f:82:10:00", arrowhead = normal]; }
+}
