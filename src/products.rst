@@ -6,14 +6,16 @@ Products Used
 This is a list of the products used in the project.
 
 
-.. _retrotink_4k:
+.. _hdmi_switch:
 
-Retrotink 4K
-------------
+HDMI Switch
+-----------
 
-Upscaler for retro consoles. Upscales video up to 4K.
+I use the FiveHome 6 Port HDMI 2.0 Switcher I bought from `Amazon CA <https://www.amazon.ca/dp/B076XWNQP9?th=1>`_.
 
-`shop <https://www.retrotink.com/product-page/retrotink-4k>`_
+It cannot be controlled via CEC, it has to be controlled with IR or with a physical button.
+
+It appears to be incompatible with the Retrotink 4K.
 
 
 .. _hydra:
@@ -25,13 +27,23 @@ Automatic SCART switch with 8 inputs and 2 output.
 
 `shop <https://lotharek.pl/productdetail.php?id=290>`_
 
-.. _hdmi_switch:
+.. _keypad:
 
-HDMI Switch
------------
+Keypad
+------
 
-I use the FiveHome 6 Port HDMI 2.0 Switcher I bought from `Amazon CA <https://www.amazon.ca/dp/B076XWNQP9?th=1>`_.
+Its a 3d printed keypad with 16 keys I bought from `Etsy <https://www.etsy.com/ca/listing/1031708108/zmk-16-hotswap-mechanical-macropad>`_.
 
-It cannot be controlled via CEC, it has to be controlled with IR or with a physical button.
+I mapped the keys from F1 to F16.
 
-It appears to be incompatible with the Retrotink 4K.
+I used a PTouch label maker to label the keys.
+
+
+.. _retrotink_4k:
+
+Retrotink 4K
+------------
+
+Upscaler for retro consoles. Upscales video up to 4K.
+
+`shop <https://www.retrotink.com/product-page/retrotink-4k>`_
