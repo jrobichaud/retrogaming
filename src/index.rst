@@ -1,5 +1,3 @@
-.. title:: My Retrogaming Setup
-
 .. meta::
    :description: This website describes in detail my retrogaming setup.
    :keywords: retrogaming,homeassistant,arduino,automation,infrared,raspberry pi

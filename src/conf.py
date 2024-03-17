@@ -25,7 +25,7 @@ master_doc = "index"
 
 # -- Project information -----------------------------------------------------
 
-project = "retrogaming"
+project = "My Retrogaming Setup"
 copyright = "2024, Jules Robichaud-Gagnon"
 author = "Jules Robichaud-Gagnon"
 
