@@ -25,6 +25,13 @@ This is how the whole setup looks like:
   1. Raspberry pi Zero 2W -- 2. USB Hub -- 3. Arduino Nano Every with board. There's one cable going to the Retrotink4K and another one going to the HDMI switch.
 
 
+
+.. figure:: _static/keypad.jpg
+   :alt: Keypad
+   :align: center
+
+   This image: an IR Led just above the keypad pointing at the Retrotink4K.
+
 Home Assistant MQTT
 -------------------
 

@@ -47,6 +47,7 @@ Contents, indices and tables
   :maxdepth: 2
 
   infrared
+  keypad
   cec
   power
   products

@@ -27,16 +27,12 @@ Automatic SCART switch with 8 inputs and 2 output.
 
 `shop <https://lotharek.pl/productdetail.php?id=290>`_
 
-.. _keypad:
+.. _keypad_product:
 
 Keypad
 ------
 
-Its a 3d printed keypad with 16 keys I bought from `Etsy <https://www.etsy.com/ca/listing/1031708108/zmk-16-hotswap-mechanical-macropad>`_.
-
-I mapped the keys from F1 to F16.
-
-I used a PTouch label maker to label the keys.
+See :ref:`keypad`.
 
 
 .. _retrotink_4k:
