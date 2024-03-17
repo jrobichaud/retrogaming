@@ -1,6 +1,6 @@
-.. _alttps:
+.. _alttpr:
 
-ALTTPR (A Link to the Past Randomizer)
-======================================
+A Link to the Past Randomizer
+=============================
 
 TODO

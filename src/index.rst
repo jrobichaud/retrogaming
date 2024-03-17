@@ -48,8 +48,10 @@ Contents, indices and tables
   keypad
   cec
   power
+  audio
   products
   homeassistant
+  alttpr
 
 * :ref:`genindex`
 * :ref:`modindex`

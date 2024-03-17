@@ -5,6 +5,38 @@ Products Used
 
 This is a list of the products used in the project.
 
+.. _adafruit_usb_c_12v:
+
+Adafruit USB Type C 3.1 PD to 5.5mm Barrel Jack Cable - 12V 5A Output
+---------------------------------------------------------------------
+
+`shop <https://www.adafruit.com/product/5450>`_
+
+
+.. _adafruit_usb_c_15v:
+
+Adafruit USB Type C 3.1 PD to 5.5mm Barrel Jack Cable - 15V 5A Output
+---------------------------------------------------------------------
+
+`shop <https://www.adafruit.com/product/5451>`_
+
+
+.. _anker_elite:
+
+Anker PowerPort 2 Elite
+-----------------------
+
+USB charger with 2 ports.
+
+`shop <https://www.anker.com/ca/products/a2023?variant=41698567618724>`_
+
+.. _snes_2_barrel_jack:
+
+Console 5 Super Nintendo SNES Power Supply Adapter Plug Cable
+-------------------------------------------------------------
+
+`shop <https://console5.com/store/super-nintendo-snes-power-supply-adapter-plug-cable.html>`_
+
 
 .. _hdmi_switch:
 
@@ -35,6 +67,14 @@ Keypad
 See :ref:`keypad`.
 
 
+.. _barrel_jack_reverse_polarity:
+
+Reverse Polarity Converter Cable
+--------------------------------
+
+`Amazon CA <https://www.amazon.ca/dp/B07YJKJY7C/>`_
+
+
 .. _retrotink_4k:
 
 Retrotink 4K
@@ -48,3 +88,37 @@ I bought accessories for it:
 
 - `SCART-Lock for RetroTINK-4K <https://kytor.com/store/product/rt4k-scart-lock/>`_
 - `RetroTINK 4K Vertical Stand <https://www.etsy.com/ca/listing/1616574816/retrotink-4k-vertical-stand>`_
+
+
+.. _ugreen_nexode_65w:
+
+UGREEN Nexode 65W
+-----------------
+
+GaN charger with two USB-C PD ports of 45W and 20W.
+
+.. figure:: _static/pd/65w_psu.jpg
+    :alt: UGREEN Nexode 65W
+    :align: center
+
+`shop <https://www.ugreen.com/products/65w-3-ports-gan-fast-charger?variant=39915659591742>`_
+
+.. _ugreen_nexode_100w:
+
+UGREEN Nexode 100W
+-----------------
+
+GaN charger with three USB-C PD ports of 45W and 20W.
+
+.. figure:: _static/pd/100w_psu.png
+    :alt: UGREEN Nexode 100W
+    :align: center
+
+`shop <https://www.ugreen.com/products/65w-3-ports-gan-fast-charger?variant=39915659591742>`_
+
+.. _usb_c_9v_power_trigger:
+
+USB-C 9V Power Trigger
+----------------------
+
+`Amazon CA <https://www.amazon.ca/gp/product/B09HKJGWKN/>`_

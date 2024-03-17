@@ -1,0 +1,6 @@
+Console,Voltage,PSU Power,Real Max Power,Plug,Notes
+SNES,9V,7.65W,,"Non-standard jack, I used a :ref:`barrel jack to snes adapter <snes_2_barrel_jack>`. It also has an inverted polarity so I used a :ref:`barrel_jack_reverse_polarity`. I made my own cable using :ref:`usb_c_9v_power_trigger` soldered to a male barrel jack.",It has a 9V with inverted polarity. I could have soldered the sned plug directly to an usbc-c trigger but I decided not to.
+Genesis,9V,9W,,"Standard barrel jack, I made my own cable using :ref:`usb_c_9v_power_trigger` soldered to a male barrel jack.",The PSU was hot even though the console was off
+GameCube,12V,39W,`23W <https://www.tpcdb.com/product.php?id=1615>`_,I used the plug of a used power supply I soldered to a 12v usb-c trigger,
+Wii,12V,60W,`18.4W <https://www.tpcdb.com/product.php?id=1124>`_,I used the plug of a used power supply I soldered to a barrel jack. I combined it with :ref:`adafruit_usb_c_12v`.,
+WiiU,15V,75W,`34W <https://www.tpcdb.com/product.php?id=2214>`_,I used the plug of a used power supply I soldered to a barrel jack. I combined it with :ref:`adafruit_usb_c_15v`.,
