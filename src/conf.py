@@ -73,5 +73,3 @@ html_theme = "alabaster"
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["_static"]
 graphviz_output_format = "svg"
-
-#html_baseurl = "retrogaming.robichaudg.net"
