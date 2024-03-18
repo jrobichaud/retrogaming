@@ -39,6 +39,7 @@ extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.doctest",
     "sphinx.ext.graphviz",
+    "sphinxcontrib.video",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -48,7 +49,6 @@ templates_path = ["_templates"]
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
-
 
 def get_version(precision):
     VERSION = (1,0,0,)
@@ -73,3 +73,7 @@ html_theme = "alabaster"
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["_static"]
 graphviz_output_format = "svg"
+
+html_css_files = [
+    "css/custom.css",
+]

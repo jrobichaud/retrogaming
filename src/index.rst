@@ -13,7 +13,7 @@ My Retrogaming Setup
 ====================
 
 .. note::
-    This website is under construction.
+    This website is under construction. If you have any questions, feel free to open a `github issue <https://github.com/jrobichaud/retrogaming/issues/new>`_.
 
 This website describes in detail my retrogaming setup. It's more of a personal documentation than a tutorial. I hope it can be useful to someone else.
 
@@ -34,8 +34,7 @@ There is a lot of things going on here. Here's an overview of what is going on w
 4. The scart switch detects the signal and switches to the correct input. (I have no merit here, it just works)
 5. Now I can play my game.
 
-
-If you have any questions, feel free to open a `github issue <https://github.com/jrobichaud/retrogaming/issues/new>`_.
+I also made some quality of life improvements for :ref:`alttpr` in my setup.
 
 
 Contents, indices and tables
