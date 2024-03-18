@@ -26,6 +26,15 @@ I used a P-touch label maker to label the keys.
 
 The keypad is plugged to the raspberry pi.
 
+The red X button will:
+
+- power off all the :ref:`smart_plugs` except the one for the TV I keep always active;
+- send :ref:`cec` message to turn off the TV;
+- stop the streaming on the :ref:`Chromecasts <cast>`;
+- close the light;
+- (I still manage the power of my consoles manually, however the PS5 will detect via :ref:`cec` the TV is turned off so it will go to sleep automatically).
+
+
 keypad2mqtt
 -----------
 
