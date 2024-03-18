@@ -51,6 +51,17 @@ I had a lot of issues with the mixer at first, it had a lot of noise but I figur
 `shop <https://www.amazon.ca/gp/product/B09TKQ11NV/>`_
 
 
+.. _fxpak_pro:
+
+FXPAK Pro
+---------
+
+The flash cart I use for the Super Nintendo. It uses sd2snes.
+
+`on the KRIKZZ.com store <https://krikzz.com/our-products/cartridges/fxpak-pro.html>`_
+`on the everdrive.me store <https://everdrive.me/cartridges/fxpak-pro.html>`_
+
+
 .. _hdmi_switch:
 
 HDMI Switch

@@ -22,7 +22,7 @@ Normally you would:
 3. Select the game options
 4. Download the rom
 
-With the ROM you can play the game on a SNES emulator OR use a flash cart to play on a real SNES.
+With the ROM you can play the game on a SNES emulator OR use a flash cart (Ex: :ref:`fxpak_pro`) to play on a real SNES.
 
 To play on a flash cart you need to:
 

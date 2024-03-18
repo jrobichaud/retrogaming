@@ -48,9 +48,9 @@ Contents, indices and tables
   power
   audio
   cast
-  products
   homeassistant
   alttpr
+  products
 
 * :ref:`genindex`
 * :ref:`modindex`
