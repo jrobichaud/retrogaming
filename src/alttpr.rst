@@ -71,7 +71,7 @@ Oh and also auto track the progress of my game on the :strike:`wall mounted` mon
 The Pieces of the Puzzle
 ------------------------
 
-This part is fully detailed. All the pieces of the puzzle are there.
+This part is not fully detailed but all the pieces of the puzzle are there.
 
 Reverse Proxy
 ^^^^^^^^^^^^^
