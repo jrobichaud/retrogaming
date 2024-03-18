@@ -75,7 +75,7 @@ This scene powers on the :ref:`Smart Plug <smart_plugs>` of the monitor on the w
 ha-catt-service
 ^^^^^^^^^^^^^^^
 
-I made the Home Assistant integration `ha-catt-service <https://github.com/jrobichaud/ha-catt-service>`_ to be able to cast an URL to a Chromecast. Its used only by my :ref:`alttpr` setup.
+I made the Home Assistant integration `ha-catt-service <https://github.com/jrobichaud/ha-catt-service>`_ to be able to cast an URL to a Chromecast. Its used only by my :ref:`A Link to the Past Randomizer <ha_catt_service_alttpr>` setup.
 
 .. code-block:: yaml
 

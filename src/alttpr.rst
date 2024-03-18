@@ -10,7 +10,7 @@ Synopsis
 
 `A Link to the Past Randomizer <https://alttpr.com/en>`_ is a new way to replay this classic game by shuffling the location of the items (any may other things).
 
-Its then possible to track the progress of the game using a tracker. Ex: `Dunka Track <https://alttprtracker.dunka.net/>`_ that you can use manually or automatically by connecting the game to the site (using the emulator or your flash card connected on your computer using sd2snes).
+Its then possible to track the progress of the game using a tracker. Ex: `Dunka Track <https://alttprtracker.dunka.net/>`_ that you can use manually or automatically by connecting the game to the site (using the emulator or your flash cart connected on your computer using sd2snes).
 
 Play a game
 ^^^^^^^^^^^
@@ -24,7 +24,7 @@ Normally you would:
 
 With the ROM you can play the game on a SNES emulator OR use a flash cart to play on a real SNES.
 
-To play on a flash card you need to:
+To play on a flash cart you need to:
 
 1. remove the SD Card from the flash cart
 2. insert it into your computer
@@ -37,7 +37,7 @@ To play on a flash card you need to:
 
 You need to do this every single time you want to play a new seed.
 
-However for advanced user tools can let you upload directly the rom on the flash card when it's connected on your computer.
+However for advanced user tools can let you upload directly the rom on the flash cart when it's connected on your computer.
 
 
 My problems
@@ -193,4 +193,27 @@ Tracker
 ^^^^^^^
 This is a `custom version of Dunka Track <https://github.com/jrobichaud/alttptracker>`_ I tweaked to be able to run over my local network.
 
-It's a static website exposed by caddy on my local network.
+It's a static website exposed by caddy on my local network but it communicates with the websocket of my raspberry pi.
+
+.. _ha_catt_service_alttpr:
+
+Casting on my wall mounted monitor
+..................................
+
+I use the Home Assistant integration :ref:`ha_catt_service` I created to start the tracker on the Chromecast of my wall mounted monitor.
+
+I trigger it using a button my Home Assistant's dashboard.
+
+.. code-block:: yaml
+
+    service: catt_service.cast_site
+    data:
+      device_id: 74e61b172c2aafaaa1f753ffed2d8335
+      # the chromecast does not work with my hostname, I have to use the IP
+      url: >-
+        http://192.168.18.3/zt/tracker.html?f=ONNNNNNN0000NNNNGC7C7R&d=CNNYY0080000000N0&s=00000000000000000000000000&p=princess_peach&h=192.168.18.3/ws&r=1699666453697#!
+
+It has the following caveats:
+
+1. I cannot interact with the tracker (ex: changing the number of chests opened in the dungeon);
+2. I hardcoded the tracker's URL parameters for the gameplay settings I play normally.
