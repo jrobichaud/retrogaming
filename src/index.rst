@@ -23,16 +23,15 @@ This website describes in detail my retrogaming setup. It's more of a personal d
 
 There is a lot of things going on here. Here's an overview of what is going on when I press the keypad's SNES button:
 
-1. the button pressed is intercepted by a python program running on a raspberry pi
-2. the program sends a MQTT message to Home Assistant that the SNES button was pressed
-3. Home assistant starts multiple automations
-    1. it activates a smart plug to power on the scart switch and the upscaler;
-    2. a CEC signal is sent to the TV to power on and then switches to the correct input;
-    3. an infrared signal simulating a button press on its remote controller is transmitted to the upscaler in order to change to the appropriate profile for the SNES;
-    4. Power on another smart plug for the external audio card and the audio mixer;
+1. :ref:`the button pressed is intercepted by a python program running on a raspberry pi, and the program sends a MQTT message to Home Assistant that the SNES button was pressed <keypad>`
+2. :ref:`Home Assistant<homeassistant>` starts multiple automations
+    1. it activates a :ref:`smart plug<smart_plugs>` to power on the scart switch and the upscaler;
+    2. a :ref:`cec` signal is sent to the TV to power on and then switches to the correct input;
+    3. an :ref:`infrared signal<infrared>` simulating a button press on its remote controller is transmitted to the upscaler in order to change to the appropriate profile for the SNES;
+    4. it powers on another :ref:`smart plug<smart_plugs>` for the external :ref:`audio card and the audio mixer<audio>`;
     5. Lights are dimmed to the correct level through Zigbee.
-4. The scart switch detects the signal and switches to the correct input. (I have no merit here, it just works)
-5. Now I can play my game.
+3. The scart switch detects the signal and switches to the correct input. (I have no merit here, it just works)
+4. Now I can play my game.
 
 I also made some quality of life improvements for :ref:`alttpr` in my setup.
 
