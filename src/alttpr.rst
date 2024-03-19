@@ -8,7 +8,7 @@ Synopsis
 
 `Zelda: A Link to the Past` is a Super Nintendo game.
 
-`A Link to the Past Randomizer <https://alttpr.com/en>`_ is a new way to replay this classic game by shuffling the location of the items (any may other things).
+`A Link to the Past Randomizer <https://alttpr.com/en>`_ is a new way to replay this classic game by shuffling the location of the items (and many other things).
 
 Its then possible to track the progress of the game using a tracker. Ex: `Dunka Track <https://alttprtracker.dunka.net/>`_ that you can use manually or automatically by connecting the game to the site (using the emulator or your flash cart connected on your computer using sd2snes).
 
