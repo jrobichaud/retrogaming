@@ -68,10 +68,15 @@ Oh and also auto track the progress of my game on the :strike:`wall mounted` mon
 .. video:: _static/alttpr/tracker.mp4
     :width: 600
 
+
 The Pieces of the Puzzle
 ------------------------
 
 This part is not fully detailed but all the pieces of the puzzle are there.
+
+
+.. graphviz:: graphs/alttpr_sequence.dot
+
 
 Reverse Proxy
 ^^^^^^^^^^^^^
