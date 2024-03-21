@@ -37,7 +37,7 @@ digraph SEQ_DIAGRAM {
         d3 -> d4 [penwidth=5, style=solid];
         d4 -> d5;
     }
-    { rank=same; a1 -> b1 [label="publishes to topic \"nec/tx\"\nEx: {\"codes\": [\"TINK4K\", \"TINK4K_1\"]}", arrowhead=normal]; }
-    { rank=same; b2 -> c2 [label="writes to serial port\nEx: \"73;11\"", arrowhead=normal]; }
-    { rank=same; c3 -> d3 [label="sends infrared nec signal\n Ex: pew pew pew", arrowhead=normal]; }
+    { rank=same; a1 -> b1 [label="publish to topic \"nec/tx\"\nEx: {\"codes\": [\"TINK4K\", \"TINK4K_1\"]}", arrowhead=normal]; }
+    { rank=same; b2 -> c2 [label="write to serial port\nEx: \"73;11\"", arrowhead=normal]; }
+    { rank=same; c3 -> d3 [label="send infrared nec signal\n Ex: pew pew pew", arrowhead=normal]; }
 }

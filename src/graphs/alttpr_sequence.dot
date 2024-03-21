@@ -38,15 +38,15 @@ digraph SEQ_DIAGRAM {
         sni -> c1;
         c1-> c2;
         c2 -> c3;
-        c3 -> c4 [label="writes to flash cart", penwidth=5, style=solid];
+        c3 -> c4 [label="write to flash cart", penwidth=5, style=solid];
         c4 -> c5;
-        c5 -> c6 [label="boots ROM", penwidth=5, style=solid];
+        c5 -> c6 [label="boot ROM", penwidth=5, style=solid];
         c6 -> c7;
     }
 
-    { rank=same; a1 -> b1 [label="sends build configuration", arrowhead=normal]; }
-    { rank=same; a2 -> b2 [label="returns patched ROM", arrowhead=normal, dir=back]; }
-    { rank=same; a3 -> b3 [label="uploads ROM"]; b3 -> c3 [arrowhead=normal]; }
-    { rank=same; a4 -> b4 [label="callback", arrowhead=normal, dir=back]; b4 -> c4; }
-    { rank=same; a5 -> b5 [label="requests to boot ROM"]; b5 -> c5 [arrowhead=normal]; }
+    { rank=same; a1 -> b1 [label="send build configuration", arrowhead=normal]; }
+    { rank=same; a2 -> b2 [label="return patched ROM", arrowhead=normal, dir=back]; }
+    { rank=same; a3 -> b3 [label="upload ROM"]; b3 -> c3 [arrowhead=normal]; }
+    { rank=same; a4 -> b4 [label="return result", arrowhead=normal, dir=back]; b4 -> c4; }
+    { rank=same; a5 -> b5 [label="request to boot ROM"]; b5 -> c5 [arrowhead=normal]; }
 }

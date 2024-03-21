@@ -31,5 +31,5 @@ digraph SEQ_DIAGRAM {
         c3 -> c4 -> c5;
     }
     { rank = same; a1 -> b1 [label = "send message via WIFI to proxy\nEx: 1f:82:10:00", arrowhead = normal]; }
-    { rank = same; b2 -> c2 [label ="relays message to TV through HDMI cable\nEx: 1f:82:10:00", arrowhead = normal]; }
+    { rank = same; b2 -> c2 [label ="relay message to TV through HDMI cable\nEx: 1f:82:10:00", arrowhead = normal]; }
 }

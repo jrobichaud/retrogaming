@@ -31,5 +31,5 @@ digraph SEQ_DIAGRAM {
         c3 -> c4 -> c5;
     }
     { rank = same; a1 -> b1 [label = "send keydown event through USB", arrowhead = normal]; }
-    { rank = same; b2 -> c2 [label ="publishes to topic \"keypad/F1\" (to F16)", arrowhead = normal]; }
+    { rank = same; b2 -> c2 [label ="publish to topic \"keypad/F1\" (to F16)", arrowhead = normal]; }
 }
