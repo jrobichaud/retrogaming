@@ -83,7 +83,7 @@ Reverse Proxy
 
 I use `Caddy <https://caddyserver.com/>`_ as a reverse proxy to expose the website and the API on my local network from the raspberry pi.
 
-.. code-block:: Caddyfile
+.. code-block::
 
     {
       auto_https disable_redirects
