@@ -35,6 +35,7 @@ This is how the whole setup looks like:
 WIP
 
 .. code-block:: yaml
+
     substitutions:
       name: "esphome-retro-ir-nano"
       friendly_name: ESPHome Retro IR Nano
