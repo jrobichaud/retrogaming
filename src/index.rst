@@ -1,6 +1,6 @@
 .. meta::
    :description: This website describes in detail my retrogaming setup.
-   :keywords: retrogaming,homeassistant,arduino,automation,infrared,raspberry pi
+   :keywords: retrogaming,homeassistant,arduino,automation,infrared,raspberry pi,esphome,cec
    :author: Jules Robichaud-Gagnon
    :og:title property="og:title": My Retrogaming Setup
    :og:type property="og:type": article
