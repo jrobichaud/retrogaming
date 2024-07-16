@@ -30,6 +30,14 @@ USB charger with 2 ports.
 
 `shop <https://www.anker.com/ca/products/a2023?variant=41698567618724>`_
 
+.. _arduino_nano-esp32:
+
+Arduino Nano ESP32-S3
+---------------------
+
+`shop <https://www.amazon.ca/dp/B0C947BHK5>`_
+
+
 .. _snes_2_barrel_jack:
 
 Console 5 Super Nintendo SNES Power Supply Adapter Plug Cable
@@ -49,6 +57,14 @@ I had a lot of issues with the mixer at first, it had a lot of noise but I figur
 
 
 `shop <https://www.amazon.ca/gp/product/B09TKQ11NV/>`_
+
+
+..esp32s3mini
+
+ESP32-S3 mini
+-------------
+
+`shop <https://www.amazon.ca/dp/B0CR9YZHFH>`_
 
 
 .. _fxpak_pro:
@@ -73,6 +89,19 @@ It cannot be controlled via CEC, it has to be controlled with IR or with a physi
 
 It appears to be incompatible with the Retrotink 4K.
 
+.. _hdmi_cec_adapter:
+
+HDMI Male and Female Test Board MINI Connector with Board PCB 2.54mm pitch 19/20pin DP HD A Female To Male Adapter Board
+------------------------------------------------------------------------------------------------------------------------
+
+`Aliexpress <https://a.aliexpress.com/_mKe8IJK>`_
+
+.. _hdmi_proto_board:
+
+HDMI Proto Board
+----------------
+
+`shop <https://www.amazon.ca/dp/B07M98XCL6>`_
 
 .. _hydra:
 

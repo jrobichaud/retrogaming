@@ -51,6 +51,7 @@ Contents, indices and tables
   homeassistant
   alttpr
   products
+  obsoletes
 
 * :ref:`genindex`
 * :ref:`modindex`

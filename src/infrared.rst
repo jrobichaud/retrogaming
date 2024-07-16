@@ -32,6 +32,241 @@ This is how the whole setup looks like:
 
    This image: an IR Led just above the keypad pointing at the Retrotink4K.
 
+WIP
+
+.. code-block:: yaml
+    substitutions:
+      name: "esphome-retro-ir-nano"
+      friendly_name: ESPHome Retro IR Nano
+
+    esphome:
+      name: ${name}
+      friendly_name: ${friendly_name}
+      name_add_mac_suffix: false
+      platformio_options:
+        board_build.flash_mode: dio
+      project:
+        name: esphome.web
+        version: '1.0'
+
+    esp32:
+      board: esp32-s3-devkitc-1
+      framework:
+        #type: arduino
+        type: esp-idf
+
+
+    # Enable logging
+    logger:
+
+    # Enable Home Assistant API
+    api:
+      encryption:
+        key: !secret esphome_encryption_key
+
+    # Allow Over-The-Air updates
+    ota:
+      platform: esphome
+
+    # Allow provisioning Wi-Fi via serial
+    improv_serial:
+
+    wifi:
+      # Set up a wifi access point
+      ap: {}
+
+    # In combination with the `ap` this allows the user
+    # to provision wifi credentials to the device via WiFi AP.
+    captive_portal:
+
+    dashboard_import:
+      package_import_url: github://esphome/firmware/esphome-web/esp32s3.yaml@v2
+      import_full_config: true
+
+    # Sets up Bluetooth LE (Only on ESP32) to allow the user
+    # to provision wifi credentials to the device.
+    esp32_improv:
+      authorizer: none
+
+    # To have a "next url" for improv serial
+    #web_server:
+
+
+    remote_transmitter:
+      pin:
+        number: GPIO06
+      carrier_duty_percent: 50%
+
+
+    button:
+      - platform: template
+        name: Switch HDMI_1
+        on_press:
+          - remote_transmitter.transmit_nec:
+              address: 0x1
+              command: 0xE41B
+
+      - platform: template
+        name: Switch HDMI_2
+        on_press:
+          - remote_transmitter.transmit_nec:
+              address: 0x1
+              command: 0xE11E
+
+      - platform: template
+        name: Switch HDMI_3
+        on_press:
+          - remote_transmitter.transmit_nec:
+              address: 0x1
+              command: 0xF20D
+
+      - platform: template
+        name: Switch HDMI_4
+        on_press:
+          - remote_transmitter.transmit_nec:
+              address: 0x1
+              command: 0xED12
+
+      - platform: template
+        name: Switch HDMI_5
+        on_press:
+          - remote_transmitter.transmit_nec:
+              address: 0x1
+              command: 0xEF10
+
+      # https://consolemods.org/wiki/AV:RetroTINK-4K#Remote
+      - platform: template
+        name: RetroTINK 4k Profile 1
+        on_press:
+          - remote_transmitter.transmit_nec:
+              address: 0xB649
+              command: 0xF40B
+              repeat:
+                times: 2
+                wait_time: 100ms
+
+      - platform: template
+        name: RetroTINK 4k Profile 2
+        on_press:
+          - remote_transmitter.transmit_nec:
+              address: 0xB649
+              command: 0xF807
+              repeat:
+                times: 2
+                wait_time: 100ms
+
+      - platform: template
+        name: RetroTINK 4k Profile 3
+        on_press:
+          - remote_transmitter.transmit_nec:
+              address: 0xB649
+              command: 0xFC03
+              repeat:
+                times: 2
+                wait_time: 100ms
+
+      - platform: template
+        name: RetroTINK 4k Profile 4
+        on_press:
+          - remote_transmitter.transmit_nec:
+              address: 0xB649
+              command: 0xF50A
+              repeat:
+                times: 2
+                wait_time: 100ms
+
+      - platform: template
+        name: RetroTINK 4k Profile 5
+        on_press:
+          - remote_transmitter.transmit_nec:
+              address: 0xB649
+              command: 0xF906
+              repeat:
+                times: 2
+                wait_time: 100ms
+
+      - platform: template
+        name: RetroTINK 4k Profile 6
+        on_press:
+          - remote_transmitter.transmit_nec:
+              address: 0xB649
+              command: 0xFD02
+              repeat:
+                times: 2
+                wait_time: 100ms
+
+      - platform: template
+        name: RetroTINK 4k Profile 7
+        on_press:
+          - remote_transmitter.transmit_nec:
+              address: 0xB649
+              command: 0xF609
+              repeat:
+                times: 2
+                wait_time: 100ms
+
+      - platform: template
+        name: RetroTINK 4k Profile 8
+        on_press:
+          - remote_transmitter.transmit_nec:
+              address: 0xB649
+              command: 0xFA05
+              repeat:
+                times: 2
+                wait_time: 100ms
+
+      - platform: template
+        name: RetroTINK 4k Profile 9
+        on_press:
+          - remote_transmitter.transmit_nec:
+              address: 0xB649
+              command: 0xFE01
+              repeat:
+                times: 2
+                wait_time: 100ms
+
+      - platform: template
+        name: RetroTINK 4k Profile 10
+        on_press:
+          - remote_transmitter.transmit_nec:
+              address: 0xB649
+              command: 0xDA25
+              repeat:
+                times: 2
+                wait_time: 100ms
+
+      - platform: template
+        name: RetroTINK 4k Profile 11
+        on_press:
+          - remote_transmitter.transmit_nec:
+              address: 0xB649
+              command: 0xD926
+              repeat:
+                times: 2
+                wait_time: 100ms
+
+      - platform: template
+        name: RetroTINK 4k Profile 12
+        on_press:
+          - remote_transmitter.transmit_nec:
+              address: 0xB649
+              command: 0xD827
+              repeat:
+                times: 2
+                wait_time: 100ms
+
+
+
+
+
+
+
+
+
+
+
+
+
 Home Assistant MQTT
 -------------------
 
