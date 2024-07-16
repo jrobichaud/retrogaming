@@ -4,7 +4,7 @@
    :author: Jules Robichaud-Gagnon
    :og:title property="og:title": My Retrogaming Setup
    :og:type property="og:type": article
-   :og:image property="og:image": https://jrobichaud.github.io/retrogaming/_static/oveview.jpg
+   :og:image property="og:image": https://jrobichaud.github.io/retrogaming/_static/overview.jpg
    :og:url property="og:url": https://jrobichaud.github.io/retrogaming/
    :og:description property="og:description": This website describes in detail my retrogaming setup.
    :twitter:card: summary_large_image
