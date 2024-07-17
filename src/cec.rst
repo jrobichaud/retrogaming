@@ -24,7 +24,7 @@ ESPHome configuration
 
 .. image:: _static/cec/hdmi_cec_home_assistant.png
     :align: center
-    :alt: cec home assistant
+    :alt: CEC home assistant
 
 I use this `ESPHome external component "Palakis/esphome-native-hdmi-cec" <https://github.com/Palakis/esphome-native-hdmi-cec>`_ to control CEC with Homeassistant through ESPHome.
 

@@ -18,21 +18,34 @@ This is how the whole process looks like:
 
 This is how the whole setup looks like:
 
-.. figure:: _static/infrared/arduino.jpg
+.. figure:: _static/infrared/esp32.jpg
   :alt: Arduino with raspberry pi
 
   This image:
-  1. Raspberry pi Zero 2W -- 2. USB Hub -- 3. Arduino Nano Every with board. There's one cable going to the Retrotink4K and another one going to the HDMI switch.
+  1. `Arduino Nano ESP32-S3 <arduino_nano-esp32>`_ with board. -- 2. There's one cable going to the Retrotink4K and another one going to the HDMI switch.
 
-
+Note: The reason I used this an ``Arduino Nano ESP32-S3`` over a simpler model is because my `previous implementation <cec_rpi>`_ used an ``Arduino Nano Every`` with identical pinout. I could just swap the board and keep the same wiring.
 
 .. figure:: _static/keypad.jpg
    :alt: Keypad
    :align: center
 
-   This image: an IR Led just above the keypad pointing at the Retrotink4K.
+   This image: an IR LED just above the keypad pointing at the Retrotink4K.
 
-WIP
+
+Circuit
+^^^^^^^
+
+I followed `adafruit's "sending ir codes" tutorial <https://learn.adafruit.com/using-an-infrared-library/sending-ir-codes>`_ to build the circuit.
+
+I used these :ref:`ir_leds`.
+
+ESP Home configuration
+----------------------
+
+I use ESPHome to control the IR LEDs from Home Assistant (`"remote_transmitter.transmit_nec" documentation <https://esphome.io/components/remote_transmitter.html#remote-transmitter-transmit-nec-action>`_).
+
+I originally captured the IR code myself but all the codes are here: `RetroTINK IR Remote Codes <https://consolemods.org/wiki/AV:RetroTINK-4K#Remote>`_
 
 .. code-block:: yaml
 
@@ -255,117 +268,6 @@ WIP
               repeat:
                 times: 2
                 wait_time: 100ms
-
-
-
-
-
-
-
-
-
-
-
-
-
-Home Assistant MQTT
--------------------
-
-Prerequisites
-^^^^^^^^^^^^^
-
-Setup :ref:`Home Assistant's MQTT Broker<homeassistant_mqtt>`.
-
-Automation
-^^^^^^^^^^
-
-Create an automation to send the nec codes to :ref:`mqtt_to_nec`.
-
-The codes match `mqtt2nec's config.csv <https://github.com/jrobichaud/mqtt2nec/blob/main/config.csv>`_. You can also send codes as hex strings.
-
-The first value is common for the device and the next ones are the actual code you want to send.
-
-.. code-block:: yaml
-
-    service: mqtt.publish
-    data:
-      topic: nec/tx
-      payload: "{\"codes\":  [  \"TINK4K\", \"TINK4K_1\" ]}"
-
-
-
-.. _mqtt_to_nec:
-
-mqtt2nec
---------
-
-Python program interfacing Home assistant with the arduino. It is installed on the Raspberry pi and runs as a service.
-
-`sources <https://github.com/jrobichaud/mqtt2nec>`_
-
-Installing the program
-^^^^^^^^^^^^^^^^^^^^^^
-
-.. code-block:: bash
-
-    git clone git@github.com:jrobichaud/mqtt2nec.git
-    cd mqtt2nec
-    python3 -m venv venv
-    source venv/bin/activate
-    pip install -r requirements.txt
-
-Running the program
-^^^^^^^^^^^^^^^^^^^
-
-Make sure to change the arguments to match your mqtt broker configuration.
-
-.. code-block:: bash
-
-    python3 -m "mqtt2nec" "<home assistant url>" -u "<mqtt user>" -p "<mqtt password>" -a "./config.csv"
-
-
-
-Service configuration
-^^^^^^^^^^^^^^^^^^^^^
-
-.. code-block:: ini
-
-    [Unit]
-    Description=mqtt2nec
-    Documentation=
-    After=network.target
-
-    [Service]
-    Type=simple
-    User=retro
-    ExecStart=/usr/bin/python3 -m "mqtt2nec" "<home assistant url>" -u "<mqtt user>" -p "<mqtt password>" -a "/home/retro/mqtt2nec/config.csv"
-    Restart=always
-    MemorySwapMax=0
-
-    [Install]
-    WantedBy=multi-user.target
-
-
-Arduino
--------
-
-I used this kit to prototype: `Basic Kit for Arduino <https://www.canakit.com/arduino-starter-kit.html>`_
-
-I use the `Arduino Nano Every <https://store-usa.arduino.cc/products/arduino-nano-every>`_ on my setup.
-
-Circuit
-^^^^^^^
-
-I followed `adafruit's "sending ir codes" tutorial <https://learn.adafruit.com/using-an-infrared-library/sending-ir-codes>`_ to build the circuit.
-
-I used these :ref:`ir_leds`.
-
-infrared-nec (Arduino program)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The program to install on the arduino: `infrared-nec <https://github.com/jrobichaud/infrared-nec>`_
-
-This is a custom programming that communicates with the mqtt2nec program. It was heavily inspired by `adafruit's "sending ir codes" tutorial <https://learn.adafruit.com/using-an-infrared-library/sending-ir-codes>`_.
 
 
 Capturing infrared codes (optional)
