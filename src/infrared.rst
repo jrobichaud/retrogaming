@@ -24,7 +24,7 @@ This is how the whole setup looks like:
   This image:
   1. `Arduino Nano ESP32-S3 <arduino_nano-esp32>`_ with board. -- 2. There's one cable going to the Retrotink4K and another one going to the HDMI switch.
 
-Note: The reason I used this an ``Arduino Nano ESP32-S3`` over a simpler model is because my `previous implementation <cec_rpi>`_ used an ``Arduino Nano Every`` with identical pinout. I could just swap the board and keep the same wiring.
+Note: The reason I used this an ``Arduino Nano ESP32-S3`` over a simpler model is because my :ref:`cec_rpi` used an ``Arduino Nano Every`` with identical pinout. I could just swap the board and keep the same wiring.
 
 .. figure:: _static/keypad.jpg
    :alt: Keypad

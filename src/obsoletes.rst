@@ -12,7 +12,7 @@ This file contains a list of previous implementations that have been replaced wi
 CEC through Raspberry PI
 ========================
 
-*I no longer use this method because Home Assistant was regularly losing connection with the Raspberry PI and the only way to resolve it was to restart regularly Homeassistant. See* `latest CEC implementation <cec>`_ *.*
+*I no longer use this method because Home Assistant was regularly losing connection with the Raspberry PI and the only way to resolve it was to restart regularly Homeassistant. See* :ref:`latest CEC implementation <cec>` *.*
 
 CEC is a feature of HDMI that allows individual CEC-enabled devices to control each other without user intervention.
 
@@ -104,7 +104,7 @@ This is an example home assistant automation to switch to hdmi 1:
 Infrared through Arduino
 ========================
 
-*I no longer use this method because Home Assistant was regularly losing connection with the Raspberry PI and the only way to resolve it was to restart regularly Homeassistant. See* `latest infrared implementation <infrared>`_ *.*
+*I no longer use this method because Home Assistant was regularly losing connection with the Raspberry PI and the only way to resolve it was to restart regularly Homeassistant. See* :ref:`latest infrared implementation <infrared>` *.*
 
 Overview
 --------
