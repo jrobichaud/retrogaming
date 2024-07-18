@@ -114,7 +114,7 @@ I use `Caddy <https://caddyserver.com/>`_ as a reverse proxy to expose the websi
 
       # wetbsocket for the tracker
       handle_path /ws:80 {
-        reverse_proxy :8080
+        reverse_proxy :23074
       }
 
       # api used by the front-end
