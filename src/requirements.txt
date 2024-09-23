@@ -1,5 +1,5 @@
 sphinx==7.4.0
-sphinx-autobuild==2024.4.16
+sphinx-autobuild==2024.9.19
 Jinja2==3.1.4
 importlib-metadata>=1,<9
 sphinxcontrib-video==0.2.1
