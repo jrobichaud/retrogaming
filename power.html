@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Power &#8212; My Retrogaming Setup 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=1bc0af66" />
+    <script src="_static/documentation_options.js?v=8d563738"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Audio" href="audio.html" />
+    <link rel="prev" title="CEC" href="cec.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="power">
+<span id="id1"></span><h1>Power<a class="headerlink" href="#power" title="Link to this heading">¶</a></h1>
+<section id="smart-plugs">
+<span id="id2"></span><h2>Smart Plugs<a class="headerlink" href="#smart-plugs" title="Link to this heading">¶</a></h2>
+<p>In my automations I use smart plugs to power on/off devices using Home Assistant.</p>
+<p>Usage of my smart plugs:</p>
+<ul class="simple">
+<li><p>When opening the TV: lights up my LED strip, and activates my <a class="reference internal" href="audio.html#audio"><span class="std std-ref">Audio</span></a> setup</p></li>
+<li><p>When playing retro games: <a class="reference internal" href="products.html#anker-elite"><span class="std std-ref">Anker PowerPort 2 Elite</span></a> powering my <a class="reference internal" href="products.html#retrotink-4k"><span class="std std-ref">Retrotink 4K</span></a>, and my <a class="reference internal" href="products.html#hydra"><span class="std std-ref">Hydra 2 Revised</span></a>. They both boot on power on.</p></li>
+<li><p>When I play PS3: An access point to give it access to the internet</p></li>
+<li><p>When I want to play <a class="reference internal" href="alttpr.html#alttpr"><span class="std std-ref">A Link to the Past Randomizer</span></a> or cast something while I am playing: It powers on my secondary screen mounted on the wall.</p></li>
+<li><p>And when I want to reboot the TV because sometimes CEC stops working.</p></li>
+</ul>
+<section id="sonoff-s31">
+<h3>Sonoff S31<a class="headerlink" href="#sonoff-s31" title="Link to this heading">¶</a></h3>
+<p>I am using the <a class="reference external" href="https://sonoff.tech/product/smart-plugs/s31-s31lite/">Sonoff S31 smart plugs</a> to power on/off devices to save power.</p>
+<p>They are not expensive, of good quality, and they are easy to flash with <a class="reference internal" href="#tasmota"><span class="std std-ref">Tasmota</span></a>.</p>
+</section>
+<section id="tasmota">
+<span id="id3"></span><h3>Tasmota<a class="headerlink" href="#tasmota" title="Link to this heading">¶</a></h3>
+<p><a class="reference external" href="https://tasmota.github.io/docs/">Tasmota is an open-source firmware</a>  for many devices that allows you to control them over MQTT or HTTP.</p>
+<p>I followed this guide <a class="reference external" href="https://web.archive.org/web/20220925091946/https://lukeknipe.com/s31-tasmota/">awesome guide by Luke Knipe</a> that was removed from the internet in 2022 when the author updated his website. I am trying to have the author <a class="reference external" href="https://github.com/lukeknipe/lukeknipe.github.io/issues/4">to put it back on his website</a>.</p>
+<p>On chrome: <a class="reference external" href="https://tasmota.github.io/install/">https://tasmota.github.io/install/</a></p>
+</section>
+</section>
+<section id="usb-c-pd">
+<h2>USB-C PD<a class="headerlink" href="#usb-c-pd" title="Link to this heading">¶</a></h2>
+<p>Linus Tech Tips made a video about USB-C PD. It convinced me it was a good way to save space in my setup and have less power consumption when the consoles are not used.</p>
+<a class="reference external image-reference" href="https://www.youtube.com/watch?v=kZOe7aaiqqE"><img alt="asad" src="https://img.youtube.com/vi/kZOe7aaiqqE/maxresdefault.jpg" />
+</a>
+<p>Power supplies take a lot of space</p>
+<figure class="align-center" id="id6">
+<img alt="Power supplies" src="_images/saving_space.jpg" />
+<figcaption>
+<p><span class="caption-text">This is a picture of everything I removed when I replaced the SNES, Genesis and GameCube power supplies to a single USB-C PD Charger. The Wii and WiiU are even bigger.</span><a class="headerlink" href="#id6" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<section id="requirements-for-each-of-my-consoles">
+<h3>Requirements for each of my consoles<a class="headerlink" href="#requirements-for-each-of-my-consoles" title="Link to this heading">¶</a></h3>
+<p>Each console have its own particularities, I had to plan everything properly.</p>
+<table class="docutils align-default" id="id7">
+<caption><span class="caption-text">Requirements for each of my consoles</span><a class="headerlink" href="#id7" title="Link to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Console</p></th>
+<th class="head"><p>Voltage</p></th>
+<th class="head"><p>PSU Power</p></th>
+<th class="head"><p>Real Max Power</p></th>
+<th class="head"><p>Plug</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SNES</p></td>
+<td><p>9V</p></td>
+<td><p>7.65W</p></td>
+<td></td>
+<td><p>Non-standard jack, I used a <a class="reference internal" href="products.html#snes-2-barrel-jack"><span class="std std-ref">barrel jack to snes adapter</span></a>. It also has an inverted polarity so I used a <a class="reference internal" href="products.html#barrel-jack-reverse-polarity"><span class="std std-ref">Reverse Polarity Converter Cable</span></a>. I made my own cable using <a class="reference internal" href="products.html#usb-c-9v-power-trigger"><span class="std std-ref">USB-C 9V Power Trigger</span></a> soldered to a male barrel jack.</p></td>
+<td><p>It has a 9V with inverted polarity. I could have soldered the sned plug directly to an usbc-c trigger but I decided not to.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Genesis</p></td>
+<td><p>9V</p></td>
+<td><p>9W</p></td>
+<td></td>
+<td><p>Standard barrel jack, I made my own cable using <a class="reference internal" href="products.html#usb-c-9v-power-trigger"><span class="std std-ref">USB-C 9V Power Trigger</span></a> soldered to a male barrel jack.</p></td>
+<td><p>The PSU was hot even though the console was off</p></td>
+</tr>
+<tr class="row-even"><td><p>GameCube</p></td>
+<td><p>12V</p></td>
+<td><p>39W</p></td>
+<td><p><a class="reference external" href="https://www.tpcdb.com/product.php?id=1615">23W</a></p></td>
+<td><p>I used the plug of a used power supply I soldered to a 12v usb-c trigger</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Wii</p></td>
+<td><p>12V</p></td>
+<td><p>60W</p></td>
+<td><p><a class="reference external" href="https://www.tpcdb.com/product.php?id=1124">18.4W</a></p></td>
+<td><p>I used the plug of a used power supply I soldered to a barrel jack. I combined it with <a class="reference internal" href="products.html#adafruit-usb-c-12v"><span class="std std-ref">Adafruit USB Type C 3.1 PD to 5.5mm Barrel Jack Cable - 12V 5A Output</span></a>.</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>WiiU</p></td>
+<td><p>15V</p></td>
+<td><p>75W</p></td>
+<td><p><a class="reference external" href="https://www.tpcdb.com/product.php?id=2214">34W</a></p></td>
+<td><p>I used the plug of a used power supply I soldered to a barrel jack. I combined it with <a class="reference internal" href="products.html#adafruit-usb-c-15v"><span class="std std-ref">Adafruit USB Type C 3.1 PD to 5.5mm Barrel Jack Cable - 15V 5A Output</span></a>.</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="making-my-own-cables">
+<h3>Making my own cables<a class="headerlink" href="#making-my-own-cables" title="Link to this heading">¶</a></h3>
+<figure class="align-center" id="id8">
+<img alt="9v with inverter" src="_images/9v_with_inverter.jpg" />
+<figcaption>
+<p><span class="caption-text">I am holding an <a class="reference internal" href="products.html#usb-c-9v-power-trigger"><span class="std std-ref">USB-C 9V Power Trigger</span></a> I soldered to a Male barrel jack. Its then plugged to a Male-to-female inverter barrel jack for the SNES’ inverted polarity.</span><a class="headerlink" href="#id8" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="choosing-the-right-power-supplies">
+<h3>Choosing the right power supplies<a class="headerlink" href="#choosing-the-right-power-supplies" title="Link to this heading">¶</a></h3>
+<figure class="align-center" id="id9">
+<img alt="9v with inverter" src="_images/65w_psu.jpg" />
+<figcaption>
+<p><span class="caption-text">This <a class="reference internal" href="products.html#ugreen-nexode-65w"><span class="std std-ref">65W GAN Charger</span></a> is perfect to plug the WiiU in the first socket, and the Wii in the second socket.</span><a class="headerlink" href="#id9" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id10">
+<img alt="UGREEN Nexode 100W" src="_images/100w_psu.png" />
+<figcaption>
+<p><span class="caption-text">This <a class="reference internal" href="products.html#ugreen-nexode-100w"><span class="std std-ref">100W GAN Charger</span></a> is perfect to plug the GameCube in the first socket, the Genesis in the second, and SNES in the third socket.</span><a class="headerlink" href="#id10" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">My Retrogaming Setup</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="infrared.html">Infrared</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keypad.html">Keypad v2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cec.html">CEC</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Power</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#smart-plugs">Smart Plugs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#usb-c-pd">USB-C PD</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="audio.html">Audio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cast.html">Cast</a></li>
+<li class="toctree-l1"><a class="reference internal" href="homeassistant.html">Home Assistant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alttpr.html">A Link to the Past Randomizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="products.html">Products Used</a></li>
+<li class="toctree-l1"><a class="reference internal" href="obsoletes.html">Graveyard</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="cec.html" title="previous chapter">CEC</a></li>
+      <li>Next: <a href="audio.html" title="next chapter">Audio</a></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024, Jules Robichaud-Gagnon.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/power.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

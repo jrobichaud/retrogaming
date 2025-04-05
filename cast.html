@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Cast &#8212; My Retrogaming Setup 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=1bc0af66" />
+    <script src="_static/documentation_options.js?v=8d563738"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Home Assistant" href="homeassistant.html" />
+    <link rel="prev" title="Audio" href="audio.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="cast">
+<span id="id1"></span><h1>Cast<a class="headerlink" href="#cast" title="Link to this heading">¶</a></h1>
+<p>I also use my retrogaming setup to watch tv shows and movies.</p>
+<p>In my Setup I have two Chromecasts:</p>
+<ul class="simple">
+<li><p>a primary “4k Chromecast with Google TV” connected indirectly to my TV through my <a class="reference internal" href="products.html#hdmi-switch"><span class="std std-ref">HDMI Switch</span></a>;</p></li>
+<li><p>a secondary older model Chromecast connected the DELL screen mounted on the wall. It’s used for my <a class="reference internal" href="alttpr.html#alttpr"><span class="std std-ref">A Link to the Past Randomizer</span></a> setup or to watch a TV show simultaneously as I play a game.</p></li>
+</ul>
+<img alt="Overview" class="align-center" src="_images/overview.jpg" />
+<section id="home-assistant">
+<h2>Home Assistant<a class="headerlink" href="#home-assistant" title="Link to this heading">¶</a></h2>
+<p>In order to be able to watch TV with my setup I had to use Home Assistant to automate the power on of my setup:</p>
+<ul class="simple">
+<li><p>open the TV and select the appropriate TV input using <a class="reference internal" href="cec.html#cec"><span class="std std-ref">CEC</span></a>;</p></li>
+<li><p>select the appropriate input of my <a class="reference internal" href="products.html#hdmi-switch"><span class="std std-ref">HDMI Switch</span></a> using <a class="reference internal" href="infrared.html#infrared"><span class="std std-ref">Infrared</span></a>;</p></li>
+<li><p>open the lights;</p></li>
+<li><p>activate the <a class="reference internal" href="audio.html#audio"><span class="std std-ref">Audio</span></a>.</p></li>
+</ul>
+<section id="primary-chromecast-s-automation">
+<h3>Primary Chromecast’s automation<a class="headerlink" href="#primary-chromecast-s-automation" title="Link to this heading">¶</a></h3>
+<p>I use both <a class="reference external" href="https://www.home-assistant.io/integrations/androidtv_remote">Android TV Remote</a> and <a class="reference external" href="https://www.home-assistant.io/integrations/cast/">Google Cast</a> integrations to detect if the Chromecast starts.</p>
+<p>I noticed the Android TV Remote integration is more reliable to detect the latest Chromecast’s state.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">trigger</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">platform</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">device</span>
+<span class="w">    </span><span class="nt">device_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">35acec382f488dbacf7b44d83d97a73d</span>
+<span class="w">    </span><span class="nt">domain</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">media_player</span>
+<span class="w">    </span><span class="nt">entity_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">media_player.en_bas</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">turned_on</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">platform</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">device</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">turned_on</span>
+<span class="w">    </span><span class="nt">device_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cb31a81713aa4b7233eac40e67b17c5a</span>
+<span class="w">    </span><span class="nt">entity_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">remote.en_bas_remote</span>
+<span class="w">    </span><span class="nt">domain</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">remote</span>
+</pre></div>
+</div>
+</section>
+<section id="wall-mounted-monitor-s-automation">
+<h3>Wall mounted monitor’s automation<a class="headerlink" href="#wall-mounted-monitor-s-automation" title="Link to this heading">¶</a></h3>
+<p>I use Home Assistant to detect when the Chromecast is playing or buffering and then turn on the corresponding scene.</p>
+<p>This scene powers on the <a class="reference internal" href="power.html#smart-plugs"><span class="std std-ref">Smart Plug</span></a> of the monitor on the wall.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">trigger</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">platform</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">device</span>
+<span class="w">    </span><span class="nt">device_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">74e61b172c2aafaaa1f753ffed2d8335</span>
+<span class="w">    </span><span class="nt">domain</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">media_player</span>
+<span class="w">    </span><span class="nt">entity_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">86f50f35d5aac8f31f2ba5677bb04b76</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">buffering</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">platform</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">device</span>
+<span class="w">    </span><span class="nt">device_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">74e61b172c2aafaaa1f753ffed2d8335</span>
+<span class="w">    </span><span class="nt">domain</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">media_player</span>
+<span class="w">    </span><span class="nt">entity_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">86f50f35d5aac8f31f2ba5677bb04b76</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">playing</span>
+</pre></div>
+</div>
+</section>
+<section id="ha-catt-service">
+<span id="id2"></span><h3>ha-catt-service<a class="headerlink" href="#ha-catt-service" title="Link to this heading">¶</a></h3>
+<p>I made the Home Assistant integration <a class="reference external" href="https://github.com/jrobichaud/ha-catt-service">ha-catt-service</a> to be able to cast an URL to a Chromecast. Its used only by my <a class="reference internal" href="alttpr.html#ha-catt-service-alttpr"><span class="std std-ref">A Link to the Past Randomizer</span></a> setup.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">service</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">catt_service.cast_site</span>
+<span class="nt">data</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">device_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">media_player.my_chromecast</span>
+<span class="w">  </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://en.wikipedia.org/wiki/Rickrolling</span>
+</pre></div>
+</div>
+<p>See the <a class="reference external" href="https://github.com/jrobichaud/ha-catt-service">ha-catt-service’s github</a> for installation and usage.</p>
+</section>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">My Retrogaming Setup</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="infrared.html">Infrared</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keypad.html">Keypad v2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cec.html">CEC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="power.html">Power</a></li>
+<li class="toctree-l1"><a class="reference internal" href="audio.html">Audio</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Cast</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#home-assistant">Home Assistant</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="homeassistant.html">Home Assistant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alttpr.html">A Link to the Past Randomizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="products.html">Products Used</a></li>
+<li class="toctree-l1"><a class="reference internal" href="obsoletes.html">Graveyard</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="audio.html" title="previous chapter">Audio</a></li>
+      <li>Next: <a href="homeassistant.html" title="next chapter">Home Assistant</a></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024, Jules Robichaud-Gagnon.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/cast.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
