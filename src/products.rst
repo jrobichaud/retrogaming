@@ -112,12 +112,12 @@ Automatic SCART switch with 8 inputs and 2 output.
 
 `<https://lotharek.pl/productdetail.php?id=290>`_
 
-.. _keypad_product:
+.. _keypad_v1_product:
 
 Keypad
 ------
 
-See :ref:`keypad`.
+See :ref:`keypad_v1`.
 
 
 .. _ir_leds:

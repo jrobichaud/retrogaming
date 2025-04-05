@@ -1,98 +1,84 @@
 .. _keypad:
 
-Keypad
-======
+Keypad v2
+=========
 
-.. image:: _static/keypad.jpg
-   :alt: Keypad
-   :align: center
+It started at first with a :ref:`very complicated contraption <keypad_v1>` because I could not find any bluetooth keyboard matrix.
 
-Its a 3d printed keypad with 16 keys I bought from `Etsy <https://www.etsy.com/ca/listing/1031708108/zmk-16-hotswap-mechanical-macropad>`_.
+Later, a friend of mine ended up building me a custom 4x4 keyboard using a `nice!nano v2 boards <https://nicekeyboards.com/nice-nano/>`_ with `zmk firmware <https://zmk.dev/>`_.
 
 
-Overview
---------
+ZMK firmware
+------------
 
-.. graphviz:: graphs/keypad_sequence.dot
+`bluetooth version <https://github.com/jrobichaud/zmk-config>`_
 
-.. _keypad_to_mqtt:
+`dongle version (the one I use) <https://github.com/jrobichaud/zmk-config/tree/dongle>`_. It requires an additional board but we do not need to mess with the bluetooth connection on the home assistant host.
 
-Keypad
-------
+To update the firmware I have to double tap the reset button then drag and drop the firmware file on the mounted device (like a usb stick).
 
-I mapped the keys from F1 to F16 using `QMK <https://qmk.fm/>`_ or `Vial <https://get.vial.today/>`_... I can't remember which one I used.
+Using the firmware ``settings_reset`` is very handy to reset the device settings.
 
-I used a P-touch label maker to label the keys.
+Connecting the keyboard and identifying the device
+--------------------------------------------------
 
-The keypad is plugged to the raspberry pi.
+(Only if not using a dongle) Connect the bluetooth keyboard on the host of home assistant
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The red X button will:
-
-- power off all the :ref:`smart_plugs` except the one for the TV I keep always active;
-- send :ref:`cec` message to turn off the TV;
-- stop the streaming on the :ref:`Chromecasts <cast>`;
-- close the light;
-- (I still manage the power of my consoles manually, however the PS5 will detect via :ref:`cec` the TV is turned off so it will go to sleep automatically).
-
-
-keypad2mqtt
------------
-
-Python program interfacing the keypad with Home Assistant. It is installed on the Raspberry pi and runs as a service.
-
-`sources <https://github.com/jrobichaud/keypad2mqtt>`_
-
-Installing the program
-^^^^^^^^^^^^^^^^^^^^^^
+We need to connect the keyboard to home assistant using ``bluetoothctl``.
 
 .. code-block:: bash
 
-    git clone git@github.com:jrobichaud/keypad2mqtt.git
-    cd keypad2mqtt
-    python3 -m venv venv
-    source venv/bin/activate
-    pip install -r requirements.txt
+    bluetoothctl
+    agent on
+    power on
+    scan on  # wait for your device's address to show up here and note down the MAC address
+    scan off
+    trust <MAC_ADDRESS>
+    pair <MAC_ADDRRESS>
+    connect <MAC_ADDRESS>
 
-Running the program
-^^^^^^^^^^^^^^^^^^^
 
-Make sure to change the arguments to match your mqtt broker configuration.
+Identifying the device name using
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: bash
 
-    python3 -m "keypad2mqtt" "<homeassistant url>" -d "ZiddyMakes ZMK_16_KEY" -u "<mqtt user>" -p "<mqtt password>"
+   $ cat /proc/bus/input/devices | grep ZMK
+   N: Name="ZMK Project Pacane Macro Bo Keyboard"
 
 
-
-Service configuration
-^^^^^^^^^^^^^^^^^^^^^
-
-.. code-block:: ini
-
-    [Unit]
-    Description=keypad2mqtt
-    Documentation=
-    After=network.target
-
-    [Service]
-    Type=simple
-    User=retro
-    ExecStart=/usr/bin/python3 -m "keypad2mqtt" "<homeassistant url>" -d "ZiddyMakes ZMK_16_KEY" -u "<mqtt user>" -p "<mqtt password>"
-    Restart=always
-    MemorySwapMax=0
-
-    [Install]
-    WantedBy=multi-user.target
-
-
-Home Assistant configuration
+Home assistant configuration
 ----------------------------
 
-Create an Home Assistant automation for each key using a MQTT trigger for each topic.
+configuration.yaml
 
 .. code-block:: yaml
 
-    trigger:
-      - platform: mqtt
-        topic: keypad/F1
+    keyboard_remote:
+      #device_descriptor: /dev/input/event3
+      device_name: 'ZMK Project Pacane Macro Bo Keyboard'
+      type:
+        - "key_down"
+        #- "key_up"
 
+
+Automation configurations
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: yaml
+
+    - trigger: event
+        event_type: keyboard_remote_command_received
+        event_data:
+          device_name: ZMK Project Pacane Macro Bo Keyboard
+          key_code: 59
+          type: key_down
+
+
+Keycodes for F1 to F16
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :file: tables/keycodes.csv
+    :header-rows: 1

@@ -23,7 +23,7 @@ This website describes in detail my retrogaming setup. It's more of a personal d
 
 There is a lot of things going on here. Here's an overview of what is going on when I press the keypad's SNES button:
 
-1. the button pressed is intercepted by a python program running on a raspberry pi, and the :ref:`program sends a MQTT message <keypad>` to Home Assistant that the SNES button was pressed
+1. the SNES button pressed event from the :ref:`keypad <keypad>` is sent to Home Assistant
 2. :ref:`Home Assistant<homeassistant>` starts multiple automations:
     1. it activates a :ref:`smart plug<smart_plugs>` to power on the scart switch and the upscaler;
     2. a :ref:`cec` signal is sent to the TV to power on and then switches to the correct input;

@@ -4,7 +4,7 @@ services:
       context: .
       dockerfile: ./compose/Dockerfile
       args:
-        PYTHON_VERSION: 3.12
+        PYTHON_VERSION: 3.13
     image: retrogaming
     volumes:
       - .:/app:cached
