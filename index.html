@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="This website describes in detail my retrogaming setup." name="description" />
+<meta content="retrogaming,homeassistant,arduino,automation,infrared,raspberry pi,esphome,cec" name="keywords" />
+<meta content="Jules Robichaud-Gagnon" name="author" />
+<meta content="My Retrogaming Setup" name="og:title" property="og:title" />
+<meta content="article" name="og:type" property="og:type" />
+<meta content="https://jrobichaud.github.io/retrogaming/_static/overview.jpg" name="og:image" property="og:image" />
+<meta content="https://jrobichaud.github.io/retrogaming/" name="og:url" property="og:url" />
+<meta content="This website describes in detail my retrogaming setup." name="og:description" property="og:description" />
+<meta content="summary_large_image" name="twitter:card" />
+
+    <title>My Retrogaming Setup &#8212; My Retrogaming Setup 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=1bc0af66" />
+    <script src="_static/documentation_options.js?v=8d563738"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Infrared" href="infrared.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="my-retrogaming-setup">
+<h1>My Retrogaming Setup<a class="headerlink" href="#my-retrogaming-setup" title="Link to this heading">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This website is under construction. If you have any questions, feel free to open a <a class="reference external" href="https://github.com/jrobichaud/retrogaming/issues/new">github issue</a>.</p>
+</div>
+<p>This website describes in detail my retrogaming setup. It’s more of a personal documentation than a tutorial. I hope it can be useful to someone else.</p>
+<img alt="StreamPlayer" class="align-center" src="_images/demo.gif" />
+<p>There is a lot of things going on here. Here’s an overview of what is going on when I press the keypad’s SNES button:</p>
+<ol class="arabic simple">
+<li><p>the SNES button pressed event from the <a class="reference internal" href="keypad.html#keypad"><span class="std std-ref">keypad</span></a> is sent to Home Assistant</p></li>
+<li><dl class="simple">
+<dt><a class="reference internal" href="homeassistant.html#homeassistant"><span class="std std-ref">Home Assistant</span></a> starts multiple automations:</dt><dd><ol class="arabic simple">
+<li><p>it activates a <a class="reference internal" href="power.html#smart-plugs"><span class="std std-ref">smart plug</span></a> to power on the scart switch and the upscaler;</p></li>
+<li><p>a <a class="reference internal" href="cec.html#cec"><span class="std std-ref">CEC</span></a> signal is sent to the TV to power on and then switches to the correct input;</p></li>
+<li><p>an <a class="reference internal" href="infrared.html#infrared"><span class="std std-ref">infrared signal</span></a> simulating a button press on its remote controller is transmitted to the upscaler in order to change to the appropriate profile for the SNES;</p></li>
+<li><p>it powers on another <a class="reference internal" href="power.html#smart-plugs"><span class="std std-ref">smart plug</span></a> for the external <a class="reference internal" href="audio.html#audio"><span class="std std-ref">audio card and the audio mixer</span></a>;</p></li>
+<li><p>Lights are dimmed to the correct level through Zigbee.</p></li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><p>The scart switch detects the signal and switches to the correct input. (I have no merit here, it just works)</p></li>
+<li><p>Now I can play my game.</p></li>
+</ol>
+<p>I also made some quality of life improvements for <a class="reference internal" href="alttpr.html#alttpr"><span class="std std-ref">A Link to the Past Randomizer</span></a> in my setup.</p>
+</section>
+<section id="contents-indices-and-tables">
+<h1>Contents, indices and tables<a class="headerlink" href="#contents-indices-and-tables" title="Link to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="infrared.html">Infrared</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="infrared.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="infrared.html#esp-home-configuration">ESP Home configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="keypad.html">Keypad v2</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="keypad.html#id1">ZMK firmware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="keypad.html#connecting-the-keyboard-and-identifying-the-device">Connecting the keyboard and identifying the device</a></li>
+<li class="toctree-l2"><a class="reference internal" href="keypad.html#home-assistant-configuration">Home assistant configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cec.html">CEC</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cec.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cec.html#esphome-configuration">ESPHome configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cec.html#prototype">Prototype</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cec.html#real-board">Real board</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="power.html">Power</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="power.html#smart-plugs">Smart Plugs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="power.html#usb-c-pd">USB-C PD</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="audio.html">Audio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cast.html">Cast</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cast.html#home-assistant">Home Assistant</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="homeassistant.html">Home Assistant</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="homeassistant.html#mqtt-broker">MQTT Broker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="homeassistant.html#esphome">ESPHome</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="alttpr.html">A Link to the Past Randomizer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="alttpr.html#synopsis">Synopsis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="alttpr.html#my-problems">My problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="alttpr.html#my-overkill-solution">My Overkill Solution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="alttpr.html#the-pieces-of-the-puzzle">The Pieces of the Puzzle</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="products.html">Products Used</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="products.html#adafruit-usb-type-c-3-1-pd-to-5-5mm-barrel-jack-cable-12v-5a-output">Adafruit USB Type C 3.1 PD to 5.5mm Barrel Jack Cable - 12V 5A Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="products.html#adafruit-usb-type-c-3-1-pd-to-5-5mm-barrel-jack-cable-15v-5a-output">Adafruit USB Type C 3.1 PD to 5.5mm Barrel Jack Cable - 15V 5A Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="products.html#anker-powerport-2-elite">Anker PowerPort 2 Elite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="products.html#arduino-nano-esp32-s3">Arduino Nano ESP32-S3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="products.html#console-5-super-nintendo-snes-power-supply-adapter-plug-cable">Console 5 Super Nintendo SNES Power Supply Adapter Plug Cable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="products.html#douk-audio-mixer-mx3-2-ch">Douk Audio Mixer MX3 (2-CH)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="products.html#esp32-s3-mini">ESP32-S3 mini</a></li>
+<li class="toctree-l2"><a class="reference internal" href="products.html#fxpak-pro">FXPAK Pro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="products.html#hdmi-switch">HDMI Switch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="products.html#hdmi-male-and-female-test-board-mini-connector-with-board-pcb-2-54mm-pitch-19-20pin-dp-hd-a-female-to-male-adapter-board">HDMI Male and Female Test Board MINI Connector with Board PCB 2.54mm pitch 19/20pin DP HD A Female To Male Adapter Board</a></li>
+<li class="toctree-l2"><a class="reference internal" href="products.html#hdmi-proto-board">HDMI Proto Board</a></li>
+<li class="toctree-l2"><a class="reference internal" href="products.html#hydra-2-revised">Hydra 2 Revised</a></li>
+<li class="toctree-l2"><a class="reference internal" href="products.html#keypad">Keypad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="products.html#ir-leds">IR Leds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="products.html#reverse-polarity-converter-cable">Reverse Polarity Converter Cable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="products.html#retrotink-4k">Retrotink 4K</a></li>
+<li class="toctree-l2"><a class="reference internal" href="products.html#sound-blaster-recon-3d">Sound Blaster Recon 3D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="products.html#ugreen-nexode-65w">UGREEN Nexode 65W</a></li>
+<li class="toctree-l2"><a class="reference internal" href="products.html#ugreen-nexode-100w">UGREEN Nexode 100W</a></li>
+<li class="toctree-l2"><a class="reference internal" href="products.html#usb-c-9v-power-trigger">USB-C 9V Power Trigger</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="obsoletes.html">Graveyard</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="obsoletes.html#cec-through-raspberry-pi">CEC through Raspberry PI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="obsoletes.html#infrared-through-arduino">Infrared through Arduino</a></li>
+<li class="toctree-l2"><a class="reference internal" href="obsoletes.html#keypad-v1">Keypad v1</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">My Retrogaming Setup</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="infrared.html">Infrared</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keypad.html">Keypad v2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cec.html">CEC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="power.html">Power</a></li>
+<li class="toctree-l1"><a class="reference internal" href="audio.html">Audio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cast.html">Cast</a></li>
+<li class="toctree-l1"><a class="reference internal" href="homeassistant.html">Home Assistant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alttpr.html">A Link to the Past Randomizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="products.html">Products Used</a></li>
+<li class="toctree-l1"><a class="reference internal" href="obsoletes.html">Graveyard</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+      <li>Next: <a href="infrared.html" title="next chapter">Infrared</a></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024, Jules Robichaud-Gagnon.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

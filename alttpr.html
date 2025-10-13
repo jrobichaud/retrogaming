@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>A Link to the Past Randomizer &#8212; My Retrogaming Setup 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=1bc0af66" />
+    <script src="_static/documentation_options.js?v=8d563738"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Products Used" href="products.html" />
+    <link rel="prev" title="Home Assistant" href="homeassistant.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="a-link-to-the-past-randomizer">
+<span id="alttpr"></span><h1>A Link to the Past Randomizer<a class="headerlink" href="#a-link-to-the-past-randomizer" title="Link to this heading">¶</a></h1>
+<section id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Link to this heading">¶</a></h2>
+<p><cite>Zelda: A Link to the Past</cite> is a Super Nintendo game.</p>
+<p><a class="reference external" href="https://alttpr.com/en">A Link to the Past Randomizer</a> is a new way to replay this classic game by shuffling the location of the items (and many other things).</p>
+<p>Its then possible to track the progress of the game using a tracker. Ex: <a class="reference external" href="https://alttprtracker.dunka.net/">Dunka Track</a> that you can use manually or automatically by connecting the game to the site (using the emulator or your flash cart connected on your computer using sd2snes).</p>
+<section id="play-a-game">
+<h3>Play a game<a class="headerlink" href="#play-a-game" title="Link to this heading">¶</a></h3>
+<p>Normally you would:</p>
+<ol class="arabic simple">
+<li><p>Go the the website</p></li>
+<li><p>Upload the rom (you have to find the ROM yourself first)</p></li>
+<li><p>Select the game options</p></li>
+<li><p>Download the rom</p></li>
+</ol>
+<p>With the ROM you can play the game on a SNES emulator OR use a flash cart (Ex: <a class="reference internal" href="products.html#fxpak-pro"><span class="std std-ref">FXPAK Pro</span></a>) to play on a real SNES.</p>
+<p>To play on a flash cart you need to:</p>
+<ol class="arabic simple">
+<li><p>remove the SD Card from the flash cart</p></li>
+<li><p>insert it into your computer</p></li>
+<li><p>copy the rom to the SD Card</p></li>
+<li><p>remove the SD Card from your computer</p></li>
+<li><p>insert it into the flash cart</p></li>
+<li><p>insert the flash cart into the SNES</p></li>
+<li><p>turn on the SNES</p></li>
+<li><p>use the controller to find the rom and Boot the game</p></li>
+</ol>
+<p>You need to do this every single time you want to play a new seed.</p>
+<p>However for advanced user tools can let you upload directly the rom on the flash cart when it’s connected on your computer.</p>
+</section>
+</section>
+<section id="my-problems">
+<h2>My problems<a class="headerlink" href="#my-problems" title="Link to this heading">¶</a></h2>
+<ol class="arabic simple">
+<li><p>I don’t want to use my computer at all in the process</p></li>
+<li><p>I want to play on the real SNES</p></li>
+<li><p>I am too lazy to do so many steps</p></li>
+</ol>
+</section>
+<section id="my-overkill-solution">
+<h2>My Overkill Solution<a class="headerlink" href="#my-overkill-solution" title="Link to this heading">¶</a></h2>
+<p>I had to spend countless hours to continue to be lazy.</p>
+<ol class="arabic simple">
+<li><p>create a mobile website on my local network I use to generate the rom</p></li>
+<li><p>create an API used by my website to generate the rom from <cite>https://alttpr.com/</cite></p></li>
+<li><p>upload the generated rom to my flash cart from the website</p></li>
+<li><p>start the game on the flash cart</p></li>
+</ol>
+<div  class="sphinx-contrib-video-container align-left"><video controls="True" height="600" preload="auto"><source src="_images/sni-web.mp4" type="video/mp4"></video></div><p>Oh and also auto track the progress of my game on the <span class="strike">wall mounted</span> monitor (This video is a bit old, the monitor is now wall mounted):</p>
+<div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="600"><source src="_images/tracker.mp4" type="video/mp4"></video></div></section>
+<section id="the-pieces-of-the-puzzle">
+<h2>The Pieces of the Puzzle<a class="headerlink" href="#the-pieces-of-the-puzzle" title="Link to this heading">¶</a></h2>
+<p>This part is not fully detailed but all the pieces of the puzzle are there.</p>
+<div class="graphviz"><object data="_images/graphviz-a43037d421aa1fef0c864b723a9a1e83371b729c.svg" type="image/svg+xml" class="graphviz">
+<p class="warning">// https://stackoverflow.com/a/59363959/2115513
+
+digraph SEQ_DIAGRAM {
+    graph [overlap=true, splines=line, nodesep=1.0, ordering=out];
+    edge [arrowhead=none];
+    node [shape=none, width=0, height=0, label=&quot;&quot;];
+
+    {
+        rank=same;
+        node[shape=rectangle, height=0.7, width=2];
+        mobile_website[label=&quot;Mobile website\n(sni-web)&quot;];
+        api[label=&quot;API\n(pyz3r-api)&quot;];
+        sni[label=&quot;SNI&quot;];
+    }
+    // Draw vertical lines
+    {
+        edge [style=dashed, weight=6];
+        mobile_website -&gt; a1;
+        a1 -&gt; a2;
+        a2 -&gt; a3 [penwidth=5, style=solid];
+        a3 -&gt; a4;
+        a4 -&gt; a5 [penwidth=5, style=solid];
+        a5 -&gt; a6;
+        a6 -&gt; a7;
+    }
+    {
+        edge [style=dashed, weight=6];
+        api -&gt; b1;
+        b1 -&gt; b2 [penwidth=5; style=solid];
+        b2 -&gt; b3;
+        b3 -&gt; b4;
+        b4 -&gt; b5;
+        b5 -&gt; b6;
+        b6 -&gt; b7;
+    }
+    {
+        edge [style=dashed, weight=6];
+        sni -&gt; c1;
+        c1-&gt; c2;
+        c2 -&gt; c3;
+        c3 -&gt; c4 [label=&quot;write to flash cart&quot;, penwidth=5, style=solid];
+        c4 -&gt; c5;
+        c5 -&gt; c6 [label=&quot;boot ROM&quot;, penwidth=5, style=solid];
+        c6 -&gt; c7;
+    }
+
+    { rank=same; a1 -&gt; b1 [label=&quot;send build configuration&quot;, arrowhead=normal]; }
+    { rank=same; a2 -&gt; b2 [label=&quot;return patched ROM&quot;, arrowhead=normal, dir=back]; }
+    { rank=same; a3 -&gt; b3 [label=&quot;upload ROM&quot;]; b3 -&gt; c3 [arrowhead=normal]; }
+    { rank=same; a4 -&gt; b4 [label=&quot;return result&quot;, arrowhead=normal, dir=back]; b4 -&gt; c4; }
+    { rank=same; a5 -&gt; b5 [label=&quot;request to boot ROM&quot;]; b5 -&gt; c5 [arrowhead=normal]; }
+}</p></object></div>
+<section id="reverse-proxy">
+<h3>Reverse Proxy<a class="headerlink" href="#reverse-proxy" title="Link to this heading">¶</a></h3>
+<p>I use <a class="reference external" href="https://caddyserver.com/">Caddy</a> as a reverse proxy to expose the website and the API on my local network from the raspberry pi.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="n">auto_https</span> <span class="n">disable_redirects</span>
+<span class="p">}</span>
+
+<span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">retro</span><span class="o">-</span><span class="n">controller</span><span class="o">.</span><span class="n">local</span><span class="p">,</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">192.168.18.3</span> <span class="p">{</span>
+  <span class="c1"># expose sni</span>
+  <span class="n">handle_path</span> <span class="o">/</span><span class="n">sni</span><span class="o">/*</span> <span class="p">{</span>
+   <span class="n">reverse_proxy</span> <span class="p">:</span><span class="mi">8190</span>
+  <span class="p">}</span>
+  <span class="c1"># website of the tracker</span>
+  <span class="n">handle_path</span> <span class="o">/</span><span class="n">zt</span><span class="o">/*</span> <span class="p">{</span>
+    <span class="n">root</span> <span class="o">*</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">retro</span><span class="o">/</span><span class="n">alttptracker</span><span class="o">/</span>
+    <span class="n">file_server</span> <span class="p">{</span>
+       <span class="n">hide</span> <span class="o">.</span><span class="n">git</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="c1"># redirection of the tracker&#39;s second page</span>
+  <span class="n">redir</span> <span class="o">/</span><span class="n">tracker</span><span class="o">.</span><span class="n">html</span> <span class="o">/</span><span class="n">zt</span><span class="p">{</span><span class="n">uri</span><span class="p">}</span>
+
+  <span class="c1"># mobile website</span>
+  <span class="n">handle_path</span> <span class="o">/*</span> <span class="p">{</span>
+     <span class="n">root</span> <span class="o">*</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">retro</span><span class="o">/</span><span class="n">sni</span><span class="o">-</span><span class="n">web</span><span class="o">/</span><span class="n">public</span>
+     <span class="n">file_server</span> <span class="p">{</span>
+         <span class="n">hide</span> <span class="o">.</span><span class="n">git</span>
+     <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="c1"># wetbsocket for the tracker</span>
+  <span class="n">handle_path</span> <span class="o">/</span><span class="n">ws</span><span class="p">:</span><span class="mi">80</span> <span class="p">{</span>
+    <span class="n">reverse_proxy</span> <span class="p">:</span><span class="mi">23074</span>
+  <span class="p">}</span>
+
+  <span class="c1"># api used by the front-end</span>
+  <span class="n">handle_path</span> <span class="o">/</span><span class="n">pyz3r</span><span class="o">/*</span> <span class="p">{</span>
+    <span class="n">reverse_proxy</span> <span class="p">:</span><span class="mi">8000</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="mobile-website-sni-web">
+<h3>Mobile website (sni-web)<a class="headerlink" href="#mobile-website-sni-web" title="Link to this heading">¶</a></h3>
+<p>This is the source code of my website.
+<a class="reference external" href="https://github.com/jrobichaud/sni-web">sni-web</a></p>
+<p>The build of the static site is uploaded to the raspberry pi using scp:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scp<span class="w"> </span>./public/*<span class="w"> </span>retro@retro:/home/retro/sni-web/public/
+</pre></div>
+</div>
+</section>
+<section id="api-used-by-the-website-pyz3r-api">
+<h3>API used by the website (pyz3r-api)<a class="headerlink" href="#api-used-by-the-website-pyz3r-api" title="Link to this heading">¶</a></h3>
+<p><a class="reference external" href="https://github.com/jrobichaud/pyz3r-api">pyz3r-api</a> is the API I made that communicates with <cite>https://alttpr.com/</cite> (through <a class="reference external" href="https://github.com/tcprescott/pyz3r">pyz3r</a>) to generate the rom.</p>
+<p>Its configured this way:</p>
+<ol class="arabic simple">
+<li><p>git clone on the device</p></li>
+<li><p>setup a virtual environment</p></li>
+<li><p>install the roms on the machine</p></li>
+<li><p>configure a service</p></li>
+</ol>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">[</span><span class="nv">Unit</span><span class="p p-Indicator">]</span>
+<span class="l l-Scalar l-Scalar-Plain">Description=pyz3r</span>
+<span class="l l-Scalar l-Scalar-Plain">After=network.target</span>
+
+<span class="l l-Scalar l-Scalar-Plain">[Service]</span>
+<span class="l l-Scalar l-Scalar-Plain">User=retro</span>
+<span class="l l-Scalar l-Scalar-Plain">WorkingDirectory=/home/retro/pyz3r-api</span>
+<span class="l l-Scalar l-Scalar-Plain">ExecStart=/home/retro/pyz3r-api/venv/bin/uvicorn --host 127.0.0.1 --port 8000 pyz3r_api.asgi:app</span>
+<span class="l l-Scalar l-Scalar-Plain">Restart=always</span>
+<span class="l l-Scalar l-Scalar-Plain">Environment=FLASK_ROM_PATH=&quot;./Zelda no Densetsu - Kamigami no Triforce (Japan).sfc&quot;</span>
+<span class="l l-Scalar l-Scalar-Plain">Environment=FLASK_SM_ROM_PATH=&quot;./Super Metroid (JU) [!].smc&quot;</span>
+<span class="l l-Scalar l-Scalar-Plain">MemorySwapMax=0</span>
+
+<span class="l l-Scalar l-Scalar-Plain">[Install]</span>
+<span class="l l-Scalar l-Scalar-Plain">WantedBy=multi-user.target</span>
+</pre></div>
+</div>
+</section>
+<section id="sni">
+<h3>SNI<a class="headerlink" href="#sni" title="Link to this heading">¶</a></h3>
+<p><a class="reference external" href="https://github.com/alttpo/sni">SNI</a> stands for Super Nintendo Interface. It’s a tool to control a flash cart from a computer.</p>
+<p>I made this <a class="reference external" href="https://github.com/jrobichaud/sni-pi-compiler">SNI pi compiler</a> to make a headless version for raspberry pi. Then I upload it on my raspberry pi using scp.</p>
+<p>Sni is exposed on my local network using the reverse proxy.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">[</span><span class="nv">Unit</span><span class="p p-Indicator">]</span>
+<span class="l l-Scalar l-Scalar-Plain">Description=sni</span>
+<span class="l l-Scalar l-Scalar-Plain">Documentation=</span>
+<span class="l l-Scalar l-Scalar-Plain">After=network.target</span>
+
+<span class="l l-Scalar l-Scalar-Plain">[Service]</span>
+<span class="l l-Scalar l-Scalar-Plain">Type=simple</span>
+<span class="l l-Scalar l-Scalar-Plain">User=retro</span>
+<span class="l l-Scalar l-Scalar-Plain">ExecStart=/home/retro/sni</span>
+<span class="l l-Scalar l-Scalar-Plain">Restart=always</span>
+<span class="l l-Scalar l-Scalar-Plain">#RuntimeMaxSec=1d</span>
+<span class="l l-Scalar l-Scalar-Plain">MemorySwapMax=0</span>
+<span class="l l-Scalar l-Scalar-Plain">MemoryMax=120M</span>
+<span class="l l-Scalar l-Scalar-Plain">#MemoryHigh=90M</span>
+
+<span class="l l-Scalar l-Scalar-Plain">[Install]</span>
+<span class="l l-Scalar l-Scalar-Plain">WantedBy=multi-user.target</span>
+</pre></div>
+</div>
+</section>
+<section id="tracker">
+<h3>Tracker<a class="headerlink" href="#tracker" title="Link to this heading">¶</a></h3>
+<p>This is a <a class="reference external" href="https://github.com/jrobichaud/alttptracker">custom version of Dunka Track</a> I tweaked to be able to run over my local network.</p>
+<p>It’s a static website exposed by caddy on my local network but it communicates with the websocket of my raspberry pi.</p>
+<section id="casting-on-my-wall-mounted-monitor">
+<span id="ha-catt-service-alttpr"></span><h4>Casting on my wall mounted monitor<a class="headerlink" href="#casting-on-my-wall-mounted-monitor" title="Link to this heading">¶</a></h4>
+<p>I use the Home Assistant integration <a class="reference internal" href="cast.html#ha-catt-service"><span class="std std-ref">ha-catt-service</span></a> I created to start the tracker on the Chromecast of my wall mounted monitor.</p>
+<p>I trigger it using a button my Home Assistant’s dashboard.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">service</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">catt_service.cast_site</span>
+<span class="nt">data</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">device_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">74e61b172c2aafaaa1f753ffed2d8335</span>
+<span class="w">  </span><span class="c1"># the chromecast does not work with my hostname, I have to use the IP</span>
+<span class="w">  </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">&gt;-</span>
+<span class="w">    </span><span class="no">http://192.168.18.3/zt/tracker.html?f=ONNNNNNN0000NNNNGC7C7R&amp;d=CNNYY0080000000N0&amp;s=00000000000000000000000000&amp;p=princess_peach&amp;h=192.168.18.3/ws&amp;r=1699666453697#!</span>
+</pre></div>
+</div>
+<p>It has the following caveats:</p>
+<ol class="arabic simple">
+<li><p>I cannot interact with the tracker (ex: changing the number of chests opened in the dungeon);</p></li>
+<li><p>I hardcoded the tracker’s URL parameters for the gameplay settings I play normally.</p></li>
+</ol>
+</section>
+</section>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">My Retrogaming Setup</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="infrared.html">Infrared</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keypad.html">Keypad v2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cec.html">CEC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="power.html">Power</a></li>
+<li class="toctree-l1"><a class="reference internal" href="audio.html">Audio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cast.html">Cast</a></li>
+<li class="toctree-l1"><a class="reference internal" href="homeassistant.html">Home Assistant</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">A Link to the Past Randomizer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#my-problems">My problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#my-overkill-solution">My Overkill Solution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-pieces-of-the-puzzle">The Pieces of the Puzzle</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="products.html">Products Used</a></li>
+<li class="toctree-l1"><a class="reference internal" href="obsoletes.html">Graveyard</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="homeassistant.html" title="previous chapter">Home Assistant</a></li>
+      <li>Next: <a href="products.html" title="next chapter">Products Used</a></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024, Jules Robichaud-Gagnon.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/alttpr.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
